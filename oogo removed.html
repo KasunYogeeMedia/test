@@ -1,0 +1,623 @@
+<section class="tb-section-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center heading-section animate-box">
+                <img class="mx-auto w-sm" src="https://oogoholidays.com/wp-content/uploads/2022/05/mission.png" alt="">
+                <h3>
+                    <?php the_field('our_mission_title');?>
+                </h3>
+                <p class="text-center">
+                    <?php the_field('our_mission_discription');?>
+                </p>
+            </div>
+            <div class="col-md-6 text-center heading-section animate-box">
+                <img class="mx-auto w-sm" src="https://oogoholidays.com/wp-content/uploads/2022/05/vision.png" alt="">
+                <h3>
+                    <?php the_field('our_vision_title');?>
+                </h3>
+                <p class="text-center">
+                    <?php the_field('our_vision_discription');?>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- About-us Section -->
+<section class="about-us" id="about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="group-title animate-box">
+                    <h2 class="main-title">
+                        <?php the_field('we_are_title'); ?>
+                    </h2>
+                </div>
+                <div class="about-us-wrapper">
+                    <p class="text">
+                        <?php the_field('we_are_discription'); ?>
+                    </p>
+                    <div class="group-list">
+                        <?php if( have_rows('we_are_points_left_side') ): ?>
+                        <ul class="list-unstyled about-us-list">
+                            <?php while( have_rows('we_are_points_left_side') ): the_row(); 
+                                    $points = get_sub_field('points');
+                                    ?>
+                            <li>
+                                <?php if( $points ): ?>
+                                <p class="text">-
+                                    <?php echo $points; ?>
+                                </p>
+                                <?php endif; ?>
+                            </li>
+                            <?php endwhile; ?>
+                        </ul>
+                        <?php endif; ?>
+                        <?php if( have_rows('we_are_points_right_side') ): ?>
+                        <ul class="list-unstyled about-us-list">
+                            <?php while( have_rows('we_are_points_right_side') ): the_row(); 
+                                    $ponits = get_sub_field('ponits');
+                                    ?>
+                            <li>
+                                <?php if( $ponits ): ?>
+                                <p class="text">-
+                                    <?php echo $ponits; ?>
+                                </p>
+                                <?php endif; ?>
+                            </li>
+                            <?php endwhile; ?>
+                        </ul>
+                        <?php endif; ?>
+                    </div>
+                    <!-- <div class="group-button">
+                            a href="<!--?php the_field('purchase_now_button_link'); ?>" class="btn btn-primary btn-outline">purchase now</a
+                            <a href="<?php the_field('read_more_button'); ?>" class="btn btn-primary btn-outline">read
+                                more</a>
+                        </div>-->
+                </div>
+            </div>
+            <div class="col-md-5 hide">
+                <div class="about-us-image">
+                    <?php 
+                            $image = get_field('we_are_section_image');
+                            if( !empty( $image ) ): ?>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
+                        class="img-responsive">
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 text-center">
+                <h3 class="main-title">
+                    <i class="fa fa-user"></i> Customer Service
+                </h3>
+                <p class="text">
+                    We have the commitment and the passion to satisfy our client’s needs and we manage to accomplish it.
+                </p>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h3 class="main-title">
+                    <i class="fa fa-heart" aria-hidden="true"></i> Loyalty and Integrity
+                </h3>
+                <p class="text">
+                    Our standards are high and they are reflected in all our operations.
+                </p>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h3 class="main-title">
+                    <i class="fa fa-comments" aria-hidden="true"></i> Communication
+                </h3>
+                <p class="text">
+                    We make emphasis on communication (external and internal) so our representatives can fully
+                    understand the client’s needs. This principle makes us serve our clients as they deserve.
+                </p>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h3 class="main-title">
+                    <i class="fa fa-industry" aria-hidden="true"></i> Innovation
+                </h3>
+                <p class="text">
+                    We are committed to bring solutions and to be always a step ahead. The innovation allows finding
+                    greater benefits of the things that already exists.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 text-center">
+                <h3 class="main-title">
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i> Quality
+                </h3>
+                <p class="text">
+                    In all we do. Our true quality commitment allows us to make promises become facts, creating
+                    tangible
+                    results and benefits.
+                </p>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h3 class="main-title">
+                    <i class="fa fa-users" aria-hidden="true"></i> Team Work
+                </h3>
+                <p class="text">
+                    The success is the result of working together to satisfy our client’s needs.
+                </p>
+            </div>
+            <div class="col-sm-3 text-center">
+                <h3 class="main-title">
+                    <i class="fa fa-briefcase" aria-hidden="true"></i> Responsibility
+                </h3>
+                <p class="text">
+                    We are concerned in doing the right thing.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="why-bg">
+    <div class="tb-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 heading-section animate-box white-overlay">
+                <h3 class="text-white text-center">
+                    <?php the_field('md_message_title'); ?>
+                </h3>
+                <p class="text-white">
+                    <?php the_field('md_message_description'); ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Ticketing &amp; Reservations Department -->
+<section class="tb-section-gray hide">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center heading-section animate-box">
+                <h3>
+                    <?php the_field('ticketing_title');?>
+                </h3>
+                <p>
+                    <?php the_field('ticketing_discription');?>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end Ticketing &amp; Reservations Department -->
+
+<!-- hot tours here -->
+
+<section class="about-us hide" id="inbound">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center heading-section animate-box">
+                <h3>
+                    <?php the_field('inbound_and_outbont_title');?>
+                </h3>
+                <p>
+                    <?php the_field('inbound_and_outbont_discription');?>
+                </p>
+            </div>
+            <div class="col-md-6 text-center heading-section animate-box">
+                <h4>
+                    <?php the_field('inbound_title');?>
+                </h4>
+                <?php
+                                            if( have_rows('inbound_list') ):?>
+                <ul class="list-group list-group-flush">
+                    <?php while ( have_rows('inbound_list') ) : the_row();?>
+                    <li class="list-group-item">
+                        <?php the_sub_field('point');?>
+                    </li>
+                    <?php endwhile;?>
+                </ul>
+                <?php endif;?>
+            </div>
+            <div class="col-md-6 text-center heading-section animate-box">
+                <h4>
+                    <?php the_field('outbound_title');?>
+                </h4>
+                <?php
+                                            if( have_rows('outbound_list') ):?>
+                <ul class="list-group list-group-flush">
+                    <?php while ( have_rows('outbound_list') ) : the_row();?>
+                    <li class="list-group-item">
+                        <?php the_sub_field('point');?>
+                    </li>
+                    <?php endwhile;?>
+                </ul>
+                <?php endif;?>
+            </div>
+            <div class="col-md-12 text-center heading-section animate-box">
+                <p>
+                    <?php the_field('inbound_and_outbont_bottom_discription');?>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Tours Section -->
+<section id="tb-tours" class="tb-section-gray hide">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3>
+                    <?php the_field('hot_tours_title'); ?>
+                </h3>
+                <p>
+                    <?php the_field('hot_toure_discription'); ?>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <?php query_posts('post_type=hot_tours&post_status=publish&posts_per_page=9&paged='. get_query_var('paged')); ?>
+            <?php if( have_posts() ): ?>
+            <?php while( have_posts() ): the_post(); ?>
+            <div class="col-md-4 col-sm-6 tb-tours animate-box" data-animate-effect="fadeIn">
+                <div>
+
+                    <img src="<?php the_post_thumbnail_url(array(360, 310)); ?>"
+                        alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+
+                    <div class="desc">
+                        <h3>
+                            <?php the_title(); ?>
+                        </h3>
+                        <span>
+                            <?php the_field('field_5e6724eeaa111');?>
+                        </span>
+                        <a class="btn btn-primary btn-outline" href="<?php the_permalink();?>">Read More <i
+                                class="icon-arrow-right22"></i></a>
+                    </div>
+                </div>
+            </div>
+            <?php endwhile; ?>
+            <div class="col-md-12 text-center animate-box">
+
+                <p class="tours-button">
+                    <a href="http://pre-preview.com/projects/www/stjudetravels/tours/"
+                        class="btn btn-primary btn-outline btn-lg">See All Tours <i class="icon-arrow-right22"></i></a>
+                </p>
+            </div </div>
+            <?php wp_reset_postdata();?>
+            <?php endif; wp_reset_query(); ?>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Services Section -->
+<section class="tb-section-gray hide">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3>
+                    <?php the_field('our_service_title'); ?>
+                </h3>
+                <p>
+                    <?php the_field('our_service_discriptiion'); ?>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <?php if( have_rows('our_service_card') ): ?>
+
+            <?php while( have_rows('our_service_card') ): the_row(); 
+                    $our_serevice_card_icon = get_sub_field('our_serevice_card_icon');
+                    $our_serevice_card_title = get_sub_field('our_serevice_card_title');
+                    $our_serevice_card_description = get_sub_field('our_serevice_card_description');
+                    ?>
+            <div class="col-md-4 col-sm-6">
+                <div class="serviceBox" data-uniform="true">
+                    <div class="service-icon">
+                        <?php if( $our_serevice_card_icon ): ?>
+                        <i class="<?php echo $our_serevice_card_icon; ?>"></i>
+                        <?php endif; ?>
+                    </div>
+                    <?php if( $our_serevice_card_title ): ?>
+                    <h3 class="title">
+                        <?php echo $our_serevice_card_title; ?>
+                    </h3>
+                    <?php endif; ?>
+                    <?php if( $our_serevice_card_description ): ?>
+                    <p class="description">
+                        <?php echo $our_serevice_card_description; ?>
+                    </p>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php endwhile; ?>
+
+            <?php endif; ?>
+        </div>
+    </div>
+
+</section>
+
+<!--<div class="tb-hero">
+    
+    <div class="row top-banner">
+        <div class="col-sm-9 video">
+            <div class='ResponsiveYTPlayer'><iframe class="youtube-player" id="player" type="text/html" src=<?php
+                    the_field('field_622b166a1406f'); ?>
+                    frameborder="0" muted="muted" allowfullscreen="allowfullscreen"></iframe></div>
+        </div>
+        <div class="col-sm-3 post">
+            <div class="row scroll">
+                <div class="container posts">
+                    <?php if( have_rows('banner_left_block','option') ): ?>
+                    <?php while( have_rows('banner_left_block','option') ): the_row(); 
+                            $image = get_sub_field('image');
+                            ?>
+                    <?php get_template_part( 'template-parts/right-post', 'page' ); ?>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!-- Testimonials Section-->
+<section class="our_testimonials hide">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3 class="text-white">
+                    <?php the_field('client_view_title'); ?>
+                </h3>
+                <p class="text-white">
+                    <?php the_field('client_view_discription'); ?>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <?php if( have_rows('client_view_card') ): ?>
+                <div id="testimonial-slider" class="owl-carousel">
+                    <?php while( have_rows('client_view_card') ): the_row(); 
+                        $image = get_sub_field('client_view_card_image');
+                        $client_view_card_discription = get_sub_field('client_view_card_discription');
+                        $client_view_card_name = get_sub_field('client_view_card_name');
+                        $client_view_card_role = get_sub_field('client_view_card_role');
+                        ?>
+                    <div class="testimonial">
+                        <div class="pic">
+                            <?php if( $image ): ?>
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
+                            <?php endif; ?>
+                        </div>
+                        <?php if( $client_view_card_discription ): ?>
+                        <p class="description">
+                            <?php echo $client_view_card_discription; ?>
+                        </p>
+                        <?php endif; ?>
+                        <?php if( $client_view_card_name ): ?>
+                        <h3 class="title">
+                            <?php echo $client_view_card_name; ?>
+                        </h3>
+                        <?php endif; ?>
+                        <?php if( $client_view_card_role ): ?>
+                        <small class="post">-
+                            <?php echo $client_view_card_role; ?>
+                        </small>
+                        <?php endif; ?>
+                    </div>
+                    <?php endwhile; ?>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Our Partners Section-->
+<section class="our_partner tb-section-gray text-center hide">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3>
+                    <?php the_field('trust_partnet_title');?>
+                </h3>
+                <p>
+                    <?php the_field('trust_partner_discription');?>
+                </p>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3500">
+                    <div class="carousel-inner">
+                        <?php $i=1;
+            
+            ?>
+                        <?php if( have_rows('partners_logo') ): ?>
+                        <?php while( have_rows('partners_logo') ): the_row(); 
+                                        $image = get_sub_field('logo');?>
+                        <?php 
+                    $active_class="";
+                        if($i==1)
+                $active_class="active";  ?>
+                        <?php if($i%4==1||$i==1):?>
+                        <div class="item row<?php echo ' '.$active_class;?> ">
+                            <?php endif;?>
+                            <div class="col-md-3 partner">
+                                <img alt="" src="<?php echo $image['url']; ?>">
+                            </div>
+                            <?php if($i%4==0):?>
+                        </div>
+                        <?php endif;?>
+                        <?php
+            $i++;
+            endwhile; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+                <a data-slide="next" href="#media" class="right carousel-control">›</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Blog Section -->
+<?php /*
+        <section id="tb-blog-section" class="tb-section-gray">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3><?php the_field('latest_blog_title'); ?>
+</h3>
+<p>
+    <?php the_field('latest_blog_title'); ?>
+</p>
+</div>
+</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="news-slider" class="owl-carousel">
+                <?php
+                        $args = array(
+                        'numberposts' => -1,            
+                        'orderby' => 'post_date',
+                        'order' => 'DESC',                
+                        'post_type' => 'post',
+                        'post_status' => 'publish'
+                        );
+
+                    // the query
+                    $the_query = new WP_Query( $args ); ?>
+
+                <?php if ( $the_query->have_posts() ): ?>
+
+                <!-- pagination here -->
+
+                <!-- the loop -->
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <div class="post-slide">
+                    <div class="post-img">
+                        <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
+                        <img src="<?php echo $url ?>" alt="">
+                        <div class="over-layer">
+                            <ul class="post-link">
+                                <li><a href="#" class="fa fa-search"></a></li>
+                                <li><a href="#" class="fa fa-link"></a></li>
+                            </ul>
+                        </div>
+                        <div class="post-date">
+                            <span class="date">
+                                <?php echo get_the_date('d');?>
+                            </span>
+                            <span class="month">
+                                <?php echo get_the_date('M');?>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </h3>
+                        <p class="post-description">
+                            <?php the_excerpt(); ?>
+                        </p>
+                        <a href="<?php the_permalink(); ?>" class="read-more">read more</a>
+                    </div>
+                </div>
+
+                <?php endwhile; ?>
+
+                <?php wp_reset_postdata(); ?>
+
+                <?php else : ?>
+                <p>
+                    <?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?>
+                </p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+*/ ?>
+
+
+<?php /*
+            <section class="our_team tb-section-gray" id="tb-team">
+            <div class="container">
+                <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3><?php the_field('our_guide_title'); ?>
+</h3>
+<p>
+    <?php the_field('our_guide_discription'); ?>
+</p>
+</div>
+</div>
+</div>
+
+<div class="container">
+    <?php if( have_rows('repeater_field_name') ): ?>
+    <div class="row">
+        <?php while( have_rows('repeater_field_name') ): the_row(); 
+                    $guider_image = get_sub_field('guider_image');
+                    $guider_name = get_sub_field('guider_name');
+                    $guider_role = get_sub_field('guider_role');
+                    ?>
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="team-img">
+                    <?php if( $guider_image ): ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/inc_files/images/tm-1.jpg" alt="team-img">
+                    <?php endif; ?>
+                    <div class="social">
+                        <ul>
+                            <li><a href="#" class="fab fa-facebook"></a></li>
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                            <li><a href="#" class="fab fa-linkedin"></a></li>
+                            <li><a href="#" class="fab fa-skype"></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="team-content">
+                    <?php if( $guider_name ): ?>
+                    <h3 class="title">
+                        <?php echo $guider_name; ?>
+                    </h3>
+                    <?php endif; ?>
+                    <?php if( $guider_role ): ?>
+                    <span class="post">
+                        <?php echo $guider_role; ?>
+                    </span>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+        </div>
+        <?php endwhile; ?>
+    </div>
+    <?php endif; ?>
+</div>
+</section>
+
+*/ ?>

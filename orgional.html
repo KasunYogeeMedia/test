@@ -1,0 +1,86 @@
+<?php
+/*
+Template Name: About us
+*/
+?>
+<?php get_header(); ?>
+
+<?php if (have_posts()) : while (have_posts()): the_post() ; ?>
+<style>
+    #owl-demo .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .time {
+        padding-bottom: 5px;
+    }
+
+    #tb-logo {
+        position: relative;
+        z-index: 2;
+        font-size: 15px;
+        text-transform: uppercase;
+        margin-top: 15px;
+        font-weight: 700;
+        float: left;
+        margin-left: -45px;
+        margin-bottom: 15px;
+        line-height: 35px;
+    }
+
+    .item img {
+        height: auto;
+        display: block;
+        width: 100%;
+    }
+</style>
+<section id="tb-tours" class="about-banner"
+    style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://oogoholidays.com/wp-content/uploads/2022/05/morning-2891123_1920.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12  text-center heading-section animate-box">
+                <h3>
+                    <?php the_title(); ?>
+                </h3>
+                <p>
+                    <?php the_content(); ?>
+                </p>
+            </div>
+        </div>
+</section>
+<section class="about">
+    <div class="container-fluid">
+        <div class="heading-section animate-box">
+            <h3>
+                Who we are?
+            </h3>
+            <p>
+                We feel both pleased and honored to introduce ourselves as one of the best and most reliable travel
+                companies in Sri Lanka.
+            </p>
+            <p>We at oOGo Holidays would like to offer you every kind of service here in Sri Lanka. Our team of
+                professionals, with a tremendous wealth of experience in the travel trade, are capable of fulfilling
+                every
+                client needs while traveling with us. </p>
+            <p>We operate from Colombo, the Capital of Sri Lanka and we know our country as you know the palm of
+                your hand. Our main goal has been always complete client satisfaction. We only use high quality products
+                and services, with Reasonable prices. </p>
+            <p class="text-yellow">
+                Remember, if you want a lifetime experience of your visit to Sri Lanka your choice is oOGo
+                Holidays, where everything is supervise by the owners, so we can assure you only the highest
+                quality with reasonable price.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<?php endwhile; else: ?>
+<p>
+    <?php _e('Sorry, no records matched your criteria.'); ?>
+</p>
+<?php endif; ?>
+
+<?php get_footer(); ?>

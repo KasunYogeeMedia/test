@@ -1,0 +1,67 @@
+<style>
+    /* Style the subtab */
+    .subtab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the subtab */
+    .subtab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .subtab button:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current subtablink class */
+    .subtab button.active {
+        background-color: #ccc;
+    }
+
+    /* Style the subtab content */
+    .subtabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
+
+<div class="subtab">
+    <button class="subtablinks" onclick="openCity1(event, 'cm')">CM</button>
+    <button class="subtablinks" onclick="openCity1(event, 'inch')">INCH</button>
+</div>
+
+<div id="cm" class="subtabcontent">
+    <h1>sample1</h1>
+</div>
+
+<div id="inch" class="subtabcontent">
+    <h1>sample2</h1>
+</div>
+
+<script>
+    function openCity1(evt, cityName1) {
+        var i, subtabcontent, subtablinks;
+        subtabcontent = document.getElementsByClassName("subtabcontent");
+        for (i = 0; i < subtabcontent.length; i++) {
+            subtabcontent[i].style.display = "none";
+        }
+        subtablinks = document.getElementsByClassName("subtablinks");
+        for (i = 0; i < subtablinks.length; i++) {
+            subtablinks[i].className = subtablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName1).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
